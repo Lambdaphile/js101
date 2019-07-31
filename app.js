@@ -16,6 +16,12 @@ save = (data) => {
     render();
 }
 
+remove = (taskid) => {
+    data = getTodoList();
+    data.todolist.splice(taskid,1);
+    save(data);
+}
+
 reverse = (value) => {
     let newVal  = value.split('');
     newVal.reverse();
@@ -25,10 +31,17 @@ reverse = (value) => {
 render = () => {
     data = getTodoList();
     html = data.todolist.map( (item, i)=>{
-       return '<li>'+item+' <span class="remove">[sil]</span></li>';
+       return '<li>'+item+' <span class="remove" data-taskid="'+i+'">[sil]</span></li>';
     });
     const todolistContainer = document.getElementById('todolist');
     todolistContainer.innerHTML = html;
+    removeBtns = document.getElementsByClassName('remove');
+    for (i=0; i<removeBtns.length; i++){
+        removeBtns[i].addEventListener('click',(e)=>{
+            remove(e.target.getAttribute('data-taskid'));
+        });
+    }
+
 }
 
 
@@ -39,7 +52,7 @@ function doSubmit(e){
     const value = document.getElementById('myinput').value;
     const result = document.getElementById('result');
     if (value.trim().length>0){
-        data.todolist.push({key:5, task:value});
+        data.todolist.push(value);
         save(data);
     }
     return false;
@@ -48,6 +61,7 @@ function doSubmit(e){
 
 domReady = () => {
     document.getElementById('form').addEventListener('submit',doSubmit);
+
     render();
 }
 
