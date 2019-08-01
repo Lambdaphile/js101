@@ -1,22 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <script defer src="scripts/app.js" type="application/javascript"></script>
-    <link rel="stylesheet" href="styles/app.css">
+  <meta charset="utf-8">
+  <title>Todo-List</title>
+  <script defer src="scripts/app.js" type="application/javascript"></script>
+  <link rel="stylesheet" href="styles/app.css">
 </head>
+
 <body>
+  <form id="todo-form">
+    <label for="todo-input">Task:</label>
+    <input type="text" name="todo-input" id="todo-input" placeholder="Add a new task" />
+    <button>Add</button>
+  </form>
 
-<form id="form">
-    <input type="text" name="mytext" id="myinput" placeholder="task oluştur" />
-    <button id="btn">EKLE</button>
-</form>
-
-<ul id="todolist">
-
-</ul>
-
-
+  <ul id="todo-list"></ul>
 </body>
+
 </html>
