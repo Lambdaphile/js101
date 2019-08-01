@@ -1,14 +1,10 @@
+// Global variables (accessible from everything)
 let data = localStorage.getItem('todolist');
-if (data===null){
+if (data === null){
     data = {
         todolist: []
     };
     localStorage.setItem('todolist',JSON.stringify(data));
-}
-
-
-getTodoList = () => {
-    return JSON.parse(localStorage.getItem('todolist'));
 }
 
 save = (data) => {
@@ -44,25 +40,32 @@ render = () => {
 
 }
 
+getTodoList = () => {
+    return JSON.parse(localStorage.getItem('todolist'));
+}
 
+function doSubmit(event){
+    // Prevents the form from reloading the page
+    event.preventDefault();
 
-function doSubmit(e){
-    e.preventDefault();
     let data = getTodoList();
+    
     const value = document.getElementById('myinput').value;
+    alert(value);
+    // Seems like this is never used?
     const result = document.getElementById('result');
-    if (value.trim().length>0){
+    
+    // Checks for empty strings and null values
+    if (value.trim().length > 0) {
+        // Push the new value into the data objects array
+        // and save the new value into our localStorage
         data.todolist.push(value);
         save(data);
     }
     return false;
 }
 
-
-domReady = () => {
-    document.getElementById('form').addEventListener('submit',doSubmit);
-
+document.getElementById('form').addEventListener('submit', (event) => {
+    doSubmit(event);
     render();
-}
-
-document.addEventListener('DOMContentLoaded',domReady);
+});
