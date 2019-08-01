@@ -6,16 +6,31 @@
   <title>Todo-List</title>
   <script defer src="scripts/app.js" type="application/javascript"></script>
   <link rel="stylesheet" href="styles/app.css">
+  <link rel="stylesheet" href="node_modules/bulma/css/bulma.css">
 </head>
 
 <body>
-  <form id="todo-form">
-    <label for="todo-input">Task:</label>
-    <input type="text" name="todo-input" id="todo-input" placeholder="Add a new task" />
-    <button>Add</button>
-  </form>
+  <div class="box">
+    <form class="field is-grouped is-grouped-centered" id="todo-form">
 
-  <ul id="todo-list"></ul>
+      <label class="label title is-5" for="todo-input">New Task:</label>
+      <div class="control">
+        <input type="text" name="todo-input" class="input" id="todo-input" placeholder="e.g. learn JavaScript">
+      </div>
+      <button class="button is-primary">Add</button>
+
+      <label class="checkbox">
+        <input type="checkbox">
+        Feeling Funky?
+      </label>
+
+    </form>
+  </div>
+
+  <div class="tasks-box">
+    <ul id="todo-list"></ul>
+  </div>
+
 </body>
 
 </html>
