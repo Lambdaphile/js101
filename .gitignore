@@ -1,5 +1,7 @@
+// Files
 js101.code-workspace
 
-\.idea/
+.TODO
 
-\.TODO
+// Folders
+/node_modules
