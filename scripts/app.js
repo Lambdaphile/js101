@@ -29,15 +29,15 @@ render = () => {
     html = data.todolist.map( (item, i)=>{
        return '<li>'+item+' <span class="remove" data-taskid="'+i+'">[sil]</span></li>';
     });
+
     const todolistContainer = document.getElementById('todolist');
     todolistContainer.innerHTML = html;
-    removeBtns = document.getElementsByClassName('remove');
-    for (i=0; i<removeBtns.length; i++){
-        removeBtns[i].addEventListener('click',(e)=>{
-            remove(e.target.getAttribute('data-taskid'));
-        });
-    }
 
+    Array.from(document.getElementsByClassName('remove')).forEach((removeBtn) => {
+        removeBtn.addEventListener('click', (event) => {
+            remove(event.target.getAttribute('data-taskid'));
+        }, false);
+    });
 }
 
 getTodoList = () => {
@@ -62,10 +62,11 @@ function doSubmit(event){
         data.todolist.push(value);
         save(data);
     }
+    // I'll leave this for now, not exaxtly sure what it does.
     return false;
 }
 
 document.getElementById('form').addEventListener('submit', (event) => {
     doSubmit(event);
     render();
-});
+}, false);
