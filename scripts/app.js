@@ -14,6 +14,8 @@ getTodoList = () => {
   return JSON.parse(localStorage.getItem('todoList'));
 }
 
+// Makes sure to save every state of our object (after 
+// adding or removing)
 save = (todoList) => {
   localStorage.setItem('todoList', JSON.stringify(todoList));
   render();
@@ -30,7 +32,7 @@ remove = (taskId) => {
 reverse = (taskText) => {
   let reversedTaskText = taskText.split('');
   reversedTaskText.reverse();
-  return reversedTaskText.join('-');
+  return reversedTaskText.join('');
 }
 
 render = () => {
