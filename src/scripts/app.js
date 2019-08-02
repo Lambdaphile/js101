@@ -4,42 +4,44 @@ let todoList = localStorage.getItem('todoList');
 // we gonna save our todo-list tasks
 if (todoList === null) {
   todoList = {
-    tasks: []
+    tasks: [],
   };
   localStorage.setItem('todoList', JSON.stringify(todoList));
 }
 
 // Gets and returns our localStorage object 'todoList'
-getTodoList = () => {
+function getTodoList() {
   return JSON.parse(localStorage.getItem('todoList'));
 }
 
-// Makes sure to save every state of our object (after 
+// Makes sure to save every state of our object (after
 // adding or removing)
-save = (todoList) => {
+function save() {
   localStorage.setItem('todoList', JSON.stringify(todoList));
+  // eslint-disable-next-line no-use-before-define
   render();
 }
 
 // Removes a task from localStorage object 'todoList'
-remove = (taskId) => {
+function remove(taskId) {
   todoList = getTodoList();
   todoList.tasks.splice(taskId, 1);
   save(todoList);
 }
 
 // Reverses the task text...
-reverse = (taskText) => {
-  let reversedTaskText = taskText.split('');
-  reversedTaskText.reverse();
-  return reversedTaskText.join('');
-}
+// function reverse(taskText) {
+//   const reversedTaskText = taskText.split('');
+//   reversedTaskText.reverse();
+//   return reversedTaskText.join('');
+// }
 
-render = () => {
+function render() {
   todoList = getTodoList();
   // Gets previously set tasks from localStore
   // and wraps them with html tags
-  let tasksHTML = todoList.tasks.map((taskText, i) => {
+  // eslint-disable-next-line arrow-body-style
+  const tasksHTML = todoList.tasks.map((taskText, i) => {
     return `<li>
               ${taskText}
               <span class="remove-task" data-taskId="${i}">
@@ -64,10 +66,10 @@ render = () => {
   });
 }
 
-addTask = (event) => {
+function addTask(event) {
   // Prevents the form from reloading the page
   event.preventDefault();
-  
+
   todoList = getTodoList();
   // Gets new task value from todo-lists input
   const newTask = document.getElementById('todo-input').value;
