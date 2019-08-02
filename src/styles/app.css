@@ -14,7 +14,13 @@ body {
   padding: 10px !important;
 }
 
-.tasks-box {
+.add {
+  display: block;
+  margin: 0 auto;
+}
+
+.task-box {
+  height: 400px;
   width: 300px;
   display: inline-block;
   background-color: #ffdd57;
@@ -22,13 +28,17 @@ body {
   border-radius: 6px;
 }
 
-.tasks-box li {
+.task-box li {
   padding: 15px 15px 0 15px;
 }
 
 .checkbox {
   padding-top: 7px;
   margin-left: 15px;
+}
+
+.todo-list-area {
+  display: relative;
 }
 
 #result {

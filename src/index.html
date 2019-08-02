@@ -4,10 +4,9 @@
 <head>
   <meta charset="utf-8">
   <title>Todo-List</title>
-  <script defer src="scripts/app.js" type="application/javascript"></script>
-  <link rel="stylesheet" href="styles/app.css">
-  <link rel="stylesheet" href="node_modules/bulma/css/bulma.css">
-  <script src="scripts/classes/localStorage.js"></script>
+  <script defer src="scripts/app.js" type="module"></script>
+  <link rel="stylesheet" href="./styles/app.css">
+  <link rel="stylesheet" href="../node_modules/bulma/css/bulma.css">
 </head>
 
 <body>
@@ -28,9 +27,10 @@
     </form>
   </div>
 
-  <div class="tasks-box">
-    <ul id="todo-list"></ul>
+  <div class="board">
+    <p class="new-list">Add new List</p>
   </div>
+
 
 </body>
 
