@@ -4,7 +4,7 @@
   "description": "js101",
   "main": "index.js",
   "dependencies": {
-    "bulma": "^0.7.5"
+    "semantic-ui": "^2.4.2"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
