@@ -1,7 +1,11 @@
 // Files
 js101.code-workspace
 
+.DS_Store
+
 .TODO
 
 // Folders
 /node_modules
+
+/semantic
