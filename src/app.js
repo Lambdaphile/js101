@@ -1,7 +1,15 @@
-import { default as ToDoList } from './classes/todo-list.js';
+import { default as ToDoList } from './lib/todo-list.js';
 
 let newList = document.querySelector('.new-list');
 
+document.querySelector('i').addEventListener('mouseover', (event) => {
+  event.target.setAttribute('class', 'black');
+});
+
+document.querySelector('.neww-list').addEventListener('click', function(event) {
+  event.target.style.display = 'none';
+  document.getElementById('list-wrapper').style.visibility = 'visible';
+});
 newList.addEventListener('click', () => {
   let newTodoList = new ToDoList(prompt('Enter list name'));
 

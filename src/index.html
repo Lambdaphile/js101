@@ -4,34 +4,29 @@
 <head>
   <meta charset="utf-8">
   <title>Todo-List</title>
-  <script defer src="scripts/app.js" type="module"></script>
-  <link rel="stylesheet" href="./styles/app.css">
-  <link rel="stylesheet" href="../node_modules/bulma/css/bulma.css">
+  <link rel="stylesheet" type="text/css" href="./styles/app.css">
+  <link rel="stylesheet" type="text/css" href="../semantic/dist/semantic.min.css">
+  <script
+  defer src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <script defer src="../semantic/dist/semantic.min.js"></script>
+  <script defer src="./app.js" type="module"></script>
 </head>
 
-<body>
-  <div class="box">
-    <form class="field is-grouped is-grouped-centered" id="todo-form">
-
-      <label class="label title is-5" for="todo-input">New Task:</label>
-      <div class="control">
-        <input type="text" name="todo-input" class="input" id="todo-input" placeholder="e.g. learn JavaScript">
-      </div>
-      <button class="button is-primary">Add</button>
-
-      <label class="checkbox">
-        <input type="checkbox">
-        Feeling Funky?
-      </label>
-
-    </form>
+<body class="ui container">
+  <div class="neww-list">
+    <button class="ui primary button">Add New List</button>
   </div>
-
-  <div class="board">
-    <p class="new-list">Add new List</p>
+  <div id="list-wrapper">
+    <div class="ui input fluid focus">
+      <input type="text" name="list-name" id="list-name" placeholder="Enter list title...">
+    </div>
+    <div class="options-something">
+      <button class="ui primary button">Add List</button>
+      <i class="large grey close icon"></i>
+    </div>
   </div>
-
-
 </body>
 
 </html>
