@@ -3,30 +3,67 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Todo-List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>To-Do List</title>
+
   <link rel="stylesheet" type="text/css" href="./styles/app.css">
   <link rel="stylesheet" type="text/css" href="../semantic/dist/semantic.min.css">
-  <script
-  defer src="https://code.jquery.com/jquery-3.1.1.min.js"
+
+  <script defer src="https://code.jquery.com/jquery-3.1.1.min.js"
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
   <script defer src="../semantic/dist/semantic.min.js"></script>
-  <script defer src="./app.js" type="module"></script>
+  <script defer src="./app.js"></script>
 </head>
 
-<body class="ui container">
-  <div class="neww-list">
-    <button class="ui primary button">Add New List</button>
-  </div>
-  <div id="list-wrapper">
-    <div class="ui input fluid focus">
-      <input type="text" name="list-name" id="list-name" placeholder="Enter list title...">
+<body>
+  
+  <div class="ui container">
+    <div class="board">
+
+      <div class="todo-list">
+
+        <header class="header">
+          <h5>JavScript</h5>
+          <div class="extras">
+            <i class="small ellipsis horizontal icon"></i>
+          </div>
+        </header>
+        <div class="composer">
+          <i class="icon plus"></i>
+          <span>Add a card</span>
+        </div>
+
+      </div>
+
+      <div class="todo-list idle">
+        <div class="activator">
+          <i class="icon plus"></i>
+          <span>Add another list</span>
+        </div>
+
+        <form class="form">
+          <div class="ui fluid input focus">
+            <input type="text" name="todo-list-title" class="todo-list-title" placeholder="Enter list title..."
+            autocomplete="off">
+          </div>
+
+          <div class="submit">
+              <button class="ui primary button">Add List</button>
+          </div>
+          <div class="close">
+            <i class="cancel icon"></i>
+          </div>
+        </form>
+      </div>
+
     </div>
-    <div class="options-something">
-      <button class="ui primary button">Add List</button>
-      <i class="large grey close icon"></i>
-    </div>
   </div>
+  
 </body>
 
 </html>
+
+

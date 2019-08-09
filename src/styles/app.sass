@@ -1,55 +1,80 @@
 body
-  background: #fff
+  background-image: url('../img/background.jpg') !important
+  background-size: cover !important
 
-#list-wrapper
-  width: 200px
-  background-color: #dfe1e6
+.todo-list
+  width: 272px
   border-radius: 3px
+  background-color: rgb(223, 225, 230)
+  margin: 40px 0 0 0
+
+  display: inline-block
+
+  cursor: pointer
+
+  .activator
+    width: 100%
+    color: hsla(0, 0%, 100%, .8)
+    padding: 8px 10px
+
+    display: none
+
+  .header
+    display: block
+    h5
+      color: #172b4d
+      display: inline-block
+      margin: 3px 0 3px 0
+      
+      padding-top: 6px
+      padding-bottom: 3px
+    padding: 0px 0px 5px 8px
   
-  padding: 4px
+  .extras
+    padding: 4px 9px
+    margin: 3px 3px 0 0
+    height: 30px
+    width: 30px
+    color: #6b778c
+    border-radius: 3px
+    display: block
+    float: right
+    i
+      margin: 0
+    &:hover
+      color: #172b4d
+      background-color: rgba(9,30,66,.13)
 
-  display: inline-block
-  visibility: hidden
+  .composer
+    color: #6b778c
+    padding: 10px
+    border-bottom-left-radius: 3px
+    border-bottom-right-radius: 3px
+    span:hover
+      text-decoration: underline
+    &:hover
+      background-color: rgba(9,30,66,.13)
+      color: #172b4d
+    
 
-.options-something
-  margin-top: 4px
+.form
+  color: hsla(0, 0%, 100%, .8)
 
+  .submit
+    display: inline-block
+    margin: 4px 0 0 0
 
-.neww-list
+  .close
+    display: inline-block
 
-.title
-  padding-top: 5px
-  margin-right: 5px
-/* Yeah... I know, but since never used Bulma before
-   have to do that. My time is almost over :D
-/*
-.box
-  padding: 10px !important
+.idle
+  background-color: rgba(0, 0, 0, .24)
 
-.add
+.idle:hover
+  background-color: rgba(0, 0, 0, .32)
+
+.idle .form
+  display: none
+
+.idle .activator
   display: block
-  margin: 0 auto
-
-.task-box
-  height: 400px
-  width: 300px
-  display: inline-block
-  background-color: #ffdd57
-  margin: 10px !important
-  border-radius: 6px
-  & li 
-    padding: 15px 15px 0 15px
-
-.checkbox
-  padding-top: 7px
-  margin-left: 15px
-
-.todo-list-area
-  display: relative
-
-#result
-  border: #ff0000 dashed 2px
-  padding: 20px
-  text-align: center
-  width: 320px
-  margin: 20px auto
