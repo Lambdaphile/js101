@@ -11,7 +11,7 @@
   <link rel="stylesheet" type="text/css" href="./styles/app.css">
   <link rel="stylesheet" type="text/css" href="../semantic/dist/semantic.min.css">
 
-  <script 
+  <script
     defer src="https://code.jquery.com/jquery-3.1.1.min.js"
     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
     crossorigin="anonymous"></script>
@@ -20,11 +20,11 @@
 </head>
 
 <body>
-  
+
   <div class="ui container">
     <div class="board">
 
-      <div class="todo-list">
+      <div class="todo-list experiment">
 
         <header class="header">
           <h2>Quote of the day</h2>
@@ -32,18 +32,37 @@
             <i class="small ellipsis horizontal icon"></i>
           </div>
         </header>
-        
+
         <div class="composer">
-          <i class="icon plus"></i>
-          <span>Add a card</span>
+          <div class="activator">
+            <i class="icon plus"></i>
+            <span>Add a card</span>
+          </div>
+
+          <div class="task">
+            <div class="task-text-wrapper">
+              <textarea class="task-text"
+                placeholder="Enter a title for this task..."></textarea>
+            </div>
+              <div class="submit">
+                <button class="ui primary button">Add Card</button>
+                <i class="cancel icon"></i>
+                <i class="ellipsis horizontal icon"></i>
+              </div>
+          </div>
         </div>
 
       </div>
 
-      <div class="todo-list idle">
+      <div class="todo-list creator idle">
+
         <div class="activator">
-          <i class="icon plus"></i>
-          <span>Add another list</span>
+          <div class="icon">
+            <i class="icon plus"></i>
+          </div>
+          <div class="text">
+            <span>Add another list</span>
+          </div>
         </div>
 
         <form class="form">
@@ -63,7 +82,7 @@
 
     </div>
   </div>
-  
+
 </body>
 
 </html>

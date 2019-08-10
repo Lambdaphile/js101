@@ -19,8 +19,15 @@ body {
   color: rgba(255, 255, 255, 0.8);
 }
 
+.todo-list .activator .icon {
+  display: inline-block;
+}
+
+.todo-list .activator .text {
+  display: inline-block;
+}
+
 .todo-list .header {
-  display: block;
   padding: 4px 4px 10px 18px;
 }
 
@@ -33,7 +40,6 @@ body {
 }
 
 .todo-list .extras {
-  display: block;
   float: right;
   padding: 5px 10px 8px 10px;
   color: #6b778c;
@@ -49,23 +55,57 @@ body {
   background-color: rgba(9, 30, 66, 0.13);
 }
 
-.todo-list .composer {
-  padding: 10px;
+.composer .activator {
+  display: block;
   color: #6b778c;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
 }
 
-.todo-list .composer span:hover {
+.composer .activator span:hover {
   text-decoration: underline;
 }
 
-.todo-list .composer:hover {
+.composer .activator:hover {
   color: #172b4d;
   background-color: rgba(9, 30, 66, 0.13);
 }
 
+.task {
+  padding: 8px 10px;
+}
+
+.task-text-wrapper {
+  margin-bottom: 8px;
+  padding: 6px 8px 2px;
+  cursor: pointer;
+  border-radius: 3px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
+          box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
+}
+
+.task-text {
+  overflow: hidden;
+  width: 240px;
+  height: 54px;
+  padding: 0;
+  resize: none;
+  border: none;
+  outline: none;
+  background: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  overflow-wrap: break-word;
+}
+
+.submit .ellipsis.horizontal.icon {
+  float: right;
+  margin-top: 8px;
+}
+
 .form {
+  padding: 4px;
   color: rgba(255, 255, 255, 0.8);
 }
 
@@ -78,19 +118,19 @@ body {
   display: inline-block;
 }
 
-.idle {
+.todo-list.creator.idle {
   background-color: rgba(0, 0, 0, 0.24);
 }
 
-.idle:hover {
+.todo-list.creator.idle:hover {
   background-color: rgba(0, 0, 0, 0.32);
 }
 
-.idle .form {
+.todo-list.creator.idle .form {
   display: none;
 }
 
-.idle .activator {
+.todo-list.creator.idle .activator {
   display: block;
 }
 /*# sourceMappingURL=app.css.map */

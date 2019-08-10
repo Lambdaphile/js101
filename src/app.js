@@ -4,15 +4,18 @@ const form = $('.form');
 const todoList = $('.todo-list');
 
 activator.click(() => {
-  todoList.toggleClass('idle');
-  $('.todo-list-title').focus();
+  todoList.removeClass('idle');
 });
 
 $('.close').click(() => {
-  todoList.toggleClass('idle');
+  todoList.addClass('idle');
 });
 
 form.submit((event) => {
   event.preventDefault();
   todoList.toggleClass('idle');
+});
+
+$('.composer').click(() => {
+  console.log('yay');
 });
