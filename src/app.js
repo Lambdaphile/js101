@@ -1,3 +1,5 @@
+/* eslint-disable prefer-arrow-callback */
+/* eslint-disable func-names */
 /* eslint-disable no-undef */
 const activator = $('.activator');
 const form = $('.form');
@@ -13,10 +15,9 @@ $('.close').click(() => {
 
 form.submit((event) => {
   event.preventDefault();
-
   const todoListTitle = $('.todo-list-title').val();
   if (todoListTitle.trim().length > 0) {
-    $('.todo-list.creator').before(`
+    $(`
       <div class="todo-list">
         <header class="header">
           <h2>${todoListTitle}</h2>
@@ -32,24 +33,44 @@ form.submit((event) => {
           </div>
         </div>
       </div>
-    `);
+    `).insertBefore('.creator');
   }
-
-  $('.composer').click(() => {
-    $('.header').after(`
-      <div class="task">
-        <div class="task-text-wrapper">
-          <textarea class="task-text"
-            placeholder="Enter a title for this task..."></textarea>
-        </div>
-
-        <div class="submit">
-          <button class="ui primary button">Add Card</button>
-          <i class="cancel icon"></i>
-          <i class="ellipsis horizontal icon"></i>
-        </div>
-      </div>
-    `);
-    $('.composer').css('display', 'none');
-  });
 });
+
+$('.board').on('click', '.composer', function(event) {
+  event.stopPropagation();
+  $(`
+    <div class="task">
+      <div class="task-text-wrapper">
+        <textarea class="task-text"
+          placeholder="Enter a title for this task..."></textarea>
+      </div>
+
+      <div class="submit">
+        <button class="ui primary button">Add Card</button>
+        <i class="cancel icon"></i>
+        <i class="ellipsis horizontal icon"></i>
+      </div>
+    </div>
+  `).insertBefore($(this));
+});
+
+// $('.composer').on('creation', function () {
+//   $('.header').on('click', function (event) {
+//     event.stopPropagation();
+//     $('.header').after(`
+//       <div class="task">
+//         <div class="task-text-wrapper">
+//           <textarea class="task-text"
+//             placeholder="Enter a title for this task..."></textarea>
+//         </div>
+
+//         <div class="submit">
+//           <button class="ui primary button">Add Card</button>
+//           <i class="cancel icon"></i>
+//           <i class="ellipsis horizontal icon"></i>
+//         </div>
+//       </div>
+//     `);
+//   });
+// });
